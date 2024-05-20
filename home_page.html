@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang= "en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Portfolio</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DotGothic16&family=Press+Start+2P&display=swap" rel="stylesheet">
+<style>
+        
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: left;
+    align-items: center;
+    height: 130vh;
+    background-color: #301934;
+    transition: transform 0.9s ease-in-out, opacity 0.9s ease-in-out;
+    transform: translateX(100%);
+    opacity: 0;
+    background: linear-gradient(45deg, #301934, #856088, #D6CADD, #856088, #301934);
+    background-size: 400% 400%;
+    animation: gradientAnimation 15s ease infinite;
+}
+
+@keyframes gradientAnimation {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+body.loaded {
+    transform: translateX(0);
+    opacity: 1;
+}
+
+body.hidden {
+    opacity: 0;
+    transform: translateX(-100%);
+}
+
+.header-background {
+    width: 100%;
+    height: 100px;
+    background-color: #D6CADD;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 999;
+}
+
+.main-container {
+    display: flex;
+    align-items: center;
+}
+
+.text-container {
+    text-align: left;
+    margin-left: 50px;
+}
+
+.container {
+    text-align: left;
+}
+
+header {
+    color: white;
+    padding: 0px;
+    font-size: 20px;
+    font-family: 'Press Start 2P', cursive;
+    text-align: left;
+    margin-left: 120px;
+    border: 10px none;
+}
+
+header h1 {
+    animation: infinite alternate, bounce 2s infinite;
+}
+
+@keyframes bounce {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-5px);
+    }
+}
+
+.content {
+    padding: 0px;
+    color: black;
+    margin-left: 120px;
+    font-family: 'DotGothic16', sans-serif;
+    border: 10px none;
+}
+
+.image-container img {
+    max-width: 60%;
+    margin-left: 70px;
+    height: auto;
+}
+
+.image-container img {
+    animation: imageGlow 2s infinite alternate;
+}
+
+@keyframes imageGlow {
+    0% {
+        box-shadow: 0 0 10px #856088;
+    }
+    100% {
+        box-shadow: 0 0 20px #856088, 0 0 30px #D6CADD, 0 0 40px #856088, 0 0 50px #D6CADD;
+    }
+}
+
+.vertical-line {
+    border-left: 10px solid white;
+    border-right: 590px;
+    height: 490px;
+    margin: 0 50px;
+}
+
+@keyframes pulse {
+    0% {
+        transform: scale(0.9);
+        opacity: 0.7;
+    }
+    50% {
+        transform: scale(1);
+        opacity: 1;
+    }
+    100% {
+        transform: scale(0.9);
+        opacity: 0.7;
+    }
+}
+
+.nav-item {
+    position: absolute;
+    left: 20px;
+    transform: translateY(-50%);
+    z-index: 1000;
+    transition: left 0.3s;
+}
+
+.nav-item a {
+    display: flex;
+    align-items: center;
+    width: auto;
+    text-decoration: none;
+    color: black;
+}
+
+.nav-item img {
+    max-width: 50px;
+    height: auto;
+}
+
+.nav-item span {
+    display: none;
+    margin-left: 10px;
+    font-family: 'Press Start 2P', cursive;
+    background-color: #333;
+    color: white;
+    border-radius: 0 20px 20px 0;
+    padding: 10px;
+    transition: all 0.3s;
+}
+
+.nav-item:hover img {
+    transform: translateX(5px);
+}
+
+.nav-item:hover {
+    left: 20px;
+}
+
+.nav-item:hover img {
+    max-width: 55px;
+    height: auto;
+    background-color: white;
+    border-radius: 10px 20px 20px 0;
+    padding: 5px;
+    transition: all 0.5s;
+}
+
+.nav-item:hover span {
+    display: inline;
+}
+
+.nav-item:not(:hover) {
+    left: 20px;
+    opacity: 1;
+    transition: right 0.5s;
+}
+
+.nav-item:not(:hover) img {
+    transform: translateX(-6px);
+}
+
+.nav-item:not(:hover) img {
+    max-width: 50px;
+    height: auto;
+    background-color: none;
+    border-radius: 0 20px 20px 0;
+    padding: 10px;
+    transition: all 0.5s;
+}
+
+.Home-page {
+    top: 45.8%;
+}
+
+.Personal-information {
+    top: 57.6%;
+}
+.nav-item.active a {
+    background-color: #555;
+    color: white; 
+    border-radius: 10px;
+}
+ 
+    </style>
+</head>
+<body id="home-page">
+    <div class="header-background"></div>
+    <div class="Home-page nav-item">
+        <a href="home_page.html" id="home-link">
+            <img src="redheart.png" alt="Hoomee">
+            <span>Home</span>
+        </a>
+    </div>
+    <div class="Personal-information nav-item">
+        <a href="personal_information.html" id="information-link">
+            <img src="orangeheart.png" alt="Aboutme">
+            <span>About me</span>
+        </a>
+    </div>
+    <div class="header-background"></div>
+    <div class="main-container">
+        <div class="text-container"> 
+            <header>
+                <h1>HEY, I'M <span style="color:#856088;">RHIZA ROTEA!</span></h1>
+            </header>
+            <div class="content">
+                <p>Your first time here, right? Explore my website to get <br> to know about me! Enjoy and see you later.</p>
+            </div>
+        </div>
+        <div class="vertical-line"></div>
+        <div class="image-container">
+            <img src="rhizaPicture.jpg" alt="My portfolio picture">
+        </div>
+    </div>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Apply 'loaded' class to trigger transition in effect
+            document.body.classList.add('loaded');
+
+            var bodyId = document.body.id;
+            var navItems = document.querySelectorAll('.nav-item');
+            navItems.forEach(function(navItem) {
+                var link = navItem.querySelector('a');
+                if (link.getAttribute('href').includes(bodyId)) {
+                    navItem.classList.add('active');
+                }
+                link.addEventListener('click', function(event) {
+                    event.preventDefault();
+                    document.body.classList.remove('loaded');
+                    document.body.classList.add('hidden');
+                    setTimeout(function() {
+                        window.location.href = link.href;
+                    }, 500);
+                });
+            });
+        });
+    </script>
+</body>
+</html>
